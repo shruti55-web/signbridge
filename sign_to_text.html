@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SignBridge | Sign to Text</title>
+  <link rel="stylesheet" href="css/sign_to_text.css">
+
+  <!-- MediaPipe -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+</head>
+
+<body>
+
+<div class="main">
+  <div class="camera-box" style="position: relative; width: 640px; height: 480px; margin-top: 20px;">
+    
+    <video id="camera" width="640" height="480" autoplay muted
+      style="position: absolute; top:0; left:0; z-index:1;"></video>
+
+    <canvas id="landmarkCanvas" width="640" height="480"
+      style="position: absolute; top:0; left:0; z-index:2;"></canvas>
+
+    <button id="enableCamera"
+      style="position: absolute; top: 10px; left: 10px; z-index:3;">
+      Enable Camera
+    </button>
+  </div>
+
+  <div id="output" style="margin-top: 20px; font-size: 24px; font-weight: bold;">
+    Detected:
+  </div>
+</div>
+
+<script src="js/sign_to_text.js"></script>
+
+</body>
+</html>
